@@ -1,21 +1,13 @@
 .center {
   margin: auto;
-  width: 50%;
+  width: 80%;
   padding: 10px;
 }
-
 .time-inputs {
   padding: 20px;
-}
-.time-inputs input {
-  margin: 10px;
-}
-
-.convert-buttons {
   text-align: center;
 }
-.convert-buttons button {
-  margin: 10px;
+.convert-btn {
+  color: blue;
+  border-radius: 20px;
 }
-
-/*# sourceMappingURL=site.css.map */

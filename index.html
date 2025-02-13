@@ -21,16 +21,44 @@
 
         <div class="tab-content" id="tab-content">
             <div class="tab-pane active fade show" id="pace" role="tabpanel" aria-labelledby="pace-tab">
-                <div class="input-group mb-3 time-inputs">
-                    <input type="text" class="form-control" placeholder="Minutes" aria-label="Minutes">
-                    <span> : </span>
-                    <input type="text" class="form-control" placeholder="Seconds" aria-label="Seconds">
-                </div>
-                <div class="convert-buttons">
-                    <button type="button" class="btn btn-primary">Km <i class="bi bi-arrow-right"></i> Miles</button>
-                    <button type="button" class="btn btn-primary">Miles <i class="bi bi-arrow-right"></i> Km</button>
+                <div class="container">
+                    <div class="row">
+                        <div class="col input-group mb-3 time-inputs" id="km-inputs">
+                            <input id="km-mins" type="number" class="form-control" placeholder="Minutes" value="5" aria-label="Minutes" onChange="convert('km')">
+                            <h1> : </h1>
+                            <input id="km-secs" type="number" class="form-control" placeholder="Seconds" value="00" max="59" aria-label="Seconds" onChange="convertKm('km')">
+                            <h1> /km</h1>
+                        </div>
+                        <div class="col-2 convert-btn time-inputs">
+                            <h1 class="convert-btn"><i class="bi bi-arrow-left-right"></i></h1>
+                        </div>
+                        <div class="col input-group mb-3 time-inputs" id="mile-inputs">
+                            <input id="miles-mins" type="number" class="form-control" placeholder="Minutes" value="8" aria-label="Minutes" onChange="convert('mile')">
+                            <h1> : </h1>
+                            <input id="miles-secs" type="number" class="form-control" placeholder="Seconds" value="03" aria-label="Seconds" onChange="convert('mile')">
+                            <h1> /mile</h1>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-3">
+                            <p>5k</p>
+                        </div>
+                        <div class="col-3">
+                            <p>5k</p>
+                        </div>
+                        <div class="col-3">
+                            <p>5k</p>
+                        </div>
+                        <div class="col-3">
+                            <p>5k</p>
+                        </div>
+                    </div>
                 </div>
             </div>
+
+
+
             <div class="tab-pane fade" id="distance" role="tabpanel" aria-labelledby="distance-tab">
                 Tab 2 selected
             </div>
@@ -38,5 +66,6 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="index.js"></script>
   </body>
 </html>
