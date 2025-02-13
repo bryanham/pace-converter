@@ -1,0 +1,21 @@
+.center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+}
+
+.time-inputs {
+  padding: 20px;
+}
+.time-inputs input {
+  margin: 10px;
+}
+
+.convert-buttons {
+  text-align: center;
+}
+.convert-buttons button {
+  margin: 10px;
+}
+
+/*# sourceMappingURL=site.css.map */
