@@ -25,7 +25,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="km-inputs">
-                                <input id="km-time" type="time" class="form-control" value="05:00" aria-label="Km Input" onChange="convert('km')">
+                                <input id="km-time" type="time" class="form-control" value="05:00" aria-label="Km Input" onChange="convertPace('km')">
                             <div class="input-group-append">
                                 <span class="input-group-text" id="km-label">/km</span>
                             </div>
@@ -38,7 +38,7 @@
 
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="mile-inputs">
-                                <input id="mile-time" type="time" class="form-control" value="08:03" aria-label="Mile Input" onChange="convert('mile')">
+                                <input id="mile-time" type="time" class="form-control" value="08:03" aria-label="Mile Input" onChange="convertPace('mile')">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="mile-label">/mile</span>
                                 </div>
@@ -82,8 +82,6 @@
                     </div>
                 </div>
             </div>
-
-
 
             <div class="tab-pane fade" id="distance" role="tabpanel" aria-labelledby="distance-tab">
                 Tab 2 selected

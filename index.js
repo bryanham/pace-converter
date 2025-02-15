@@ -1,4 +1,4 @@
-function convert(unit) {
+function convertPace(unit) {
     const conversion = 1.60934;
     const time = document.getElementById(unit + "-time").value;
     const [mins, secs] = time.split(":")
@@ -15,6 +15,7 @@ function convert(unit) {
     } else {
         document.getElementById('km-time').value = timeString;
     }
+    
     calculateRaceTimes();
 }
 
@@ -27,19 +28,23 @@ function calculateRaceTimes() {
     const halfMarathon = totalMinutes * 21.097494;
     const marathon = totalMinutes * 42.194988;
 
-    const fiveKmMinutes = Math.floor(fiveKm);
-    const fiveKmSeconds = Math.round((fiveKm - fiveKmMinutes) * 60);
-    document.getElementById("five-km").textContent =`${fiveKmMinutes} : ${fiveKmSeconds}`;
+    const fiveKmHours = Math.floor(fiveKm / 60)
+    const fiveKmMinutes = Math.round(fiveKm % 60);
+    const fiveKmSeconds = Math.floor(fiveKmMinutes * 60);
+    document.getElementById("five-km").textContent =`${fiveKmHours}h ${fiveKmMinutes}m ${fiveKmSeconds}s`;
 
-    const tenKmMinutes = Math.floor(tenKm);
-    const tenKmSeconds = Math.round((tenKm - tenKmMinutes) * 60);
-    document.getElementById("ten-km").textContent = `${tenKmMinutes} : ${tenKmSeconds}`;
+    const tenKmHours = Math.floor(tenKm / 60);
+    const tenKmMinutes = Math.round(tenKm % 60);
+    const tenKmSeconds = Math.round(tenKmMinutes * 60);
+    document.getElementById("ten-km").textContent = `${tenKmHours}h ${tenKmMinutes}m ${tenKmSeconds}s`;
 
-    const halfMinutes = Math.floor(halfMarathon);
-    const halfSeconds = Math.round((halfMarathon - halfMinutes) * 60);
-    document.getElementById("half-marathon").textContent = `${halfMinutes} : ${halfSeconds}`;
+    const halfMarathonHours = Math.floor(halfMarathon / 60);
+    const halfMinutes = Math.round(halfMarathon % 60);
+    const halfSeconds = Math.round(halfMinutes * 60);
+    document.getElementById("half-marathon").textContent = `${halfMarathonHours}h ${halfMinutes}m ${halfSeconds}s`;
 
-    const fullMinutes = Math.floor(marathon);
-    const fullSeconds = Math.round((marathon - fullMinutes) * 60);
-    document.getElementById("marathon").textContent = `${fullMinutes} : ${fullSeconds}`;
+    const marathonHours = Math.floor(marathon / 60);
+    const fullMinutes = Math.round(marathon % 60);
+    const fullSeconds = Math.round(fullMinutes * 60);
+    document.getElementById("marathon").textContent = `${marathonHours}h ${fullMinutes}m ${fullSeconds}s`;
 }
