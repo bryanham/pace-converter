@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="site.css">
   </head>
-  <body>
+  <body onload="calculateRaceTimes()">
     <div class="center">
         <ul class="nav nav-fill nav-tabs" role="tablist">
             <li class="nav-item" role="presentation">
@@ -33,7 +33,7 @@
                         </div>
 
                         <div class="col-12 col-sm-2 convert-btn time-inputs">
-                            <span class=".d-sm-none .d-md-block"><i class="bi bi-arrow-left-right"></i></span>
+                            <h3 class=".d-sm-none .d-md-block"><i class="bi bi-arrow-left-right"></i></h3>
                         </div>
 
                         <div class="col-12 col-sm-5">
@@ -47,17 +47,37 @@
                     </div>
 
                     <div class="row" id="race-times">
-                        <div class="col-6 col-md-3" id="five-km">
-                            <p>5k</p>
+                        <div class="col-6 col-md-3">
+                            <div class="card">
+                                <h6 class="card-header">5k</h6>
+                                <div class="card-body">
+                                <p class="card-text" id="five-km"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 col-md-3" id="ten-km">
-                            <p>10k</p>
+                        <div class="col-6 col-md-3">
+                            <div class="card">
+                                <h6 class="card-header">10k</h6>
+                                <div class="card-body">
+                                <p class="card-text" id="ten-km"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 col-md-3"id="half-marathon">
-                            <p>Half Marathon</p>
+                        <div class="col-6 col-md-3">
+                            <div class="card">
+                                <h6 class="card-header">Half Marathon</h6>
+                                <div class="card-body">
+                                <p class="card-text" id="half-marathon"></p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-6 col-md-3" id="marathon">
-                            <p>Marathon</p>
+                        <div class="col-6 col-md-3">
+                            <div class="card">
+                                <h6 class="card-header">Marathon</h6>
+                                <div class="card-body">
+                                <p class="card-text" id="marathon"></p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
