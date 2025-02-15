@@ -1,27 +1,26 @@
 function convert(measure) {
     const conversion = 1.60934;
-    const mins = document.getElementById(measure + "-mins").valueAsNumber;
-    const secs = document.getElementById(measure + "-secs").valueAsNumber;
+    const time = document.getElementById(measure + "-time").value;
+    const [mins, secs] = time.split(":")
 
-    const totalMinutes = mins + (secs / 60);
+    const totalMinutes = parseInt(mins) + (parseInt(secs) / 60);
     
     const pace = measure == 'km' ? totalMinutes * conversion : totalMinutes / conversion;
     const minutes = Math.floor(pace);
     const seconds = Math.round((pace - minutes) * 60);
+    const timeString = minutes < 10 ? `0${minutes}:${seconds}` : `${minutes}:${seconds}` 
 
     if(measure === 'km') {
-        document.getElementById('miles-mins').value = minutes;
-        document.getElementById('miles-secs').value = seconds;
+        document.getElementById('mile-time').value = timeString;
     } else {
-        document.getElementById('km-mins').value = minutes;
-        document.getElementById('km-secs').value = seconds; 
+        document.getElementById('km-time').value = timeString;
     }
     calculateRaceTimes();
 }
 
 function calculateRaceTimes() {
-    const mins = document.getElementById("km-mins").valueAsNumber;
-    const secs = document.getElementById("km-secs").valueAsNumber;
+    const time = document.getElementById("km-time").value;
+    const [mins, secs] = time.split(":")
     const fiveKmMinutes = (mins + (secs / 60)) * 5;
     const tenKmMinutes = (mins + (secs / 60)) * 10;
     const halfMarathonMinutes = (mins + (secs / 60)) * 21.097494;

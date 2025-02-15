@@ -23,29 +23,25 @@
             <div class="tab-pane active fade show" id="pace" role="tabpanel" aria-labelledby="pace-tab">
                 <div class="container">
                     <div class="row">
-                        <div class="col-4 input-group time-inputs" id="km-inputs">
-                            <input id="km-mins" type="number" class="form-control" placeholder="Minutes" value="5" aria-label="Minutes" onChange="convert('km')">
+                        <div class="col-12 col-sm-5">
+                            <div class="input-group time-inputs" id="km-inputs">
+                                <input id="km-time" type="time" class="form-control" value="05:00" aria-label="Km Input" onChange="convert('km')">
                             <div class="input-group-append">
-                                <span class="input-group-text" id="km-colon"> : </span>
+                                <span class="input-group-text" id="km-label">/km</span>
                             </div>
-                            <input id="km-secs" type="number" class="form-control" placeholder="Seconds" value="00" max="59" aria-label="Seconds" aria-describedby="km-label" onChange="convert('km')">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="km-label">/ km</span>
                             </div>
                         </div>
 
-                        <div class="col-2 convert-btn time-inputs">
-                            <h1 class="convert-btn"><i class="bi bi-arrow-left-right"></i></h1>
+                        <div class="col-12 col-sm-2 convert-btn time-inputs">
+                            <span class=".d-sm-none .d-md-block"><i class="bi bi-arrow-left-right"></i></span>
                         </div>
 
-                        <div class="col-4 input-group time-inputs" id="mile-inputs">
-                            <input id="miles-mins" type="number" class="form-control" placeholder="Minutes" value="8" aria-label="Minutes" onChange="convert('miles')">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="mile-colon"> : </span>
-                            </div>
-                            <input id="miles-secs" type="number" class="form-control" placeholder="Seconds" value="03" aria-label="Seconds" onChange="convert('miles')">
-                            <div class="input-group-append">
-                                <span class="input-group-text" id="mile-label">/ mile</span>
+                        <div class="col-12 col-sm-5">
+                            <div class="input-group time-inputs" id="mile-inputs">
+                                <input id="mile-time" type="time" class="form-control" value="08:03" aria-label="Mile Input" onChange="convert('mile')">
+                                <div class="input-group-append">
+                                    <span class="input-group-text" id="mile-label">/mile</span>
+                                </div>
                             </div>
                         </div>
                     </div>
