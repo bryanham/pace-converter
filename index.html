@@ -23,35 +23,45 @@
             <div class="tab-pane active fade show" id="pace" role="tabpanel" aria-labelledby="pace-tab">
                 <div class="container">
                     <div class="row">
-                        <div class="col input-group mb-3 time-inputs" id="km-inputs">
+                        <div class="col-4 input-group time-inputs" id="km-inputs">
                             <input id="km-mins" type="number" class="form-control" placeholder="Minutes" value="5" aria-label="Minutes" onChange="convert('km')">
-                            <h1> : </h1>
-                            <input id="km-secs" type="number" class="form-control" placeholder="Seconds" value="00" max="59" aria-label="Seconds" onChange="convertKm('km')">
-                            <h1> /km</h1>
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="km-colon"> : </span>
+                            </div>
+                            <input id="km-secs" type="number" class="form-control" placeholder="Seconds" value="00" max="59" aria-label="Seconds" aria-describedby="km-label" onChange="convert('km')">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="km-label">/ km</span>
+                            </div>
                         </div>
+
                         <div class="col-2 convert-btn time-inputs">
                             <h1 class="convert-btn"><i class="bi bi-arrow-left-right"></i></h1>
                         </div>
-                        <div class="col input-group mb-3 time-inputs" id="mile-inputs">
-                            <input id="miles-mins" type="number" class="form-control" placeholder="Minutes" value="8" aria-label="Minutes" onChange="convert('mile')">
-                            <h1> : </h1>
-                            <input id="miles-secs" type="number" class="form-control" placeholder="Seconds" value="03" aria-label="Seconds" onChange="convert('mile')">
-                            <h1> /mile</h1>
+
+                        <div class="col-4 input-group time-inputs" id="mile-inputs">
+                            <input id="miles-mins" type="number" class="form-control" placeholder="Minutes" value="8" aria-label="Minutes" onChange="convert('miles')">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="mile-colon"> : </span>
+                            </div>
+                            <input id="miles-secs" type="number" class="form-control" placeholder="Seconds" value="03" aria-label="Seconds" onChange="convert('miles')">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="mile-label">/ mile</span>
+                            </div>
                         </div>
                     </div>
 
-                    <div class="row">
-                        <div class="col-3">
+                    <div class="row" id="race-times">
+                        <div class="col-6 col-md-3" id="five-km">
                             <p>5k</p>
                         </div>
-                        <div class="col-3">
-                            <p>5k</p>
+                        <div class="col-6 col-md-3" id="ten-km">
+                            <p>10k</p>
                         </div>
-                        <div class="col-3">
-                            <p>5k</p>
+                        <div class="col-6 col-md-3"id="half-marathon">
+                            <p>Half Marathon</p>
                         </div>
-                        <div class="col-3">
-                            <p>5k</p>
+                        <div class="col-6 col-md-3" id="marathon">
+                            <p>Marathon</p>
                         </div>
                     </div>
                 </div>
