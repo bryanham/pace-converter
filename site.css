@@ -1,7 +1,10 @@
 .center {
-  margin: auto;
-  width: 80%;
-  padding: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  padding: 10px
 }
 .time-inputs {
   padding: 20px;
@@ -13,4 +16,16 @@
 }
 .card {
   margin-bottom: 20px;
+}
+#convert-btn {
+  border-radius: 20px;
+}
+#tab-content {
+  border-radius: 0 0 5px 5px;
+}
+.nav-item:first-child{
+  border-radius: 5px 0px 0px;
+}
+.nav-item:nth-child(2){
+  border-radius: 0px 5px 0px 0px;
 }

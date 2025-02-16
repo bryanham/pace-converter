@@ -8,18 +8,18 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="site.css">
   </head>
-  <body onload="convertPace('km'); convertDistance('km')">
+  <body class="text-white bg-primary" onload="convertPace('km'); convertDistance('km')">
     <div class="center">
         <ul class="nav nav-fill nav-tabs" role="tablist">
-            <li class="nav-item" role="presentation">
+            <li class="nav-item bg-white text-dark" role="presentation">
                 <a class="nav-link active" id="pace-tab" data-bs-toggle="tab" href="#pace" role="tab" aria-controls="simple-tabpanel-0" aria-selected="true">Pace</a>
             </li>
-            <li class="nav-item" role="presentation">
+            <li class="nav-item bg-white text-dark" role="presentation">
                 <a class="nav-link" id="distance-tab" data-bs-toggle="tab" href="#distance" role="tab" aria-controls="simple-tabpanel-1" aria-selected="false">Distance</a>
             </li>
         </ul>
 
-        <div class="tab-content" id="tab-content">
+        <div class="tab-content bg-white" id="tab-content">
             <div class="tab-pane active fade show" id="pace" role="tabpanel" aria-labelledby="pace-tab">
                 <div class="container">
                     <div class="row">
@@ -31,13 +31,14 @@
                                 </div>
                                 <input id="km-secs" type="number" value="00" class="form-control" value="05:00" aria-label="Km Seconds Input" onkeyup="convertPace('km')">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="km-label">/km</span>
+                                    <span class="input-group-text bg-primary text-white" id="km-label">/km</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-2 convert-btn time-inputs">
-                            <h3 class=".d-sm-none .d-md-block"><i class="bi bi-arrow-left-right"></i></h3>
+                        <div class="col-12 col-sm-2 time-inputs input-button">
+                            <h3 type="button" id="convert-btn" class="btn btn-outline-primary d-none d-sm-block disabled"><i class="bi bi-arrow-left-right"></i></h3>
+                            <h3 type="button" id="convert-btn" class="btn btn-outline-primary d-inline d-sm-none disabled"><i class="bi bi-arrow-down-up"></i></h3>   
                         </div>
 
                         <div class="col-12 col-sm-5">
@@ -48,7 +49,7 @@
                                 </div>
                                 <input id="mile-secs" type="number" class="form-control" aria-label="Mile Input" onkeyup="convertPace('mile')">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="mile-label">/mile</span>
+                                    <span class="input-group-text bg-primary text-white" id="mile-label">/mile</span>
                                 </div>
                             </div>
                         </div>
@@ -57,7 +58,7 @@
                     <div class="row" id="race-times">
                         <div class="col-6 col-md-3">
                             <div class="card">
-                                <h6 class="card-header">5k</h6>
+                                <h6 class="card-header text-white bg-primary">5k</h6>
                                 <div class="card-body">
                                 <p class="card-text" id="five-km"></p>
                                 </div>
@@ -65,7 +66,7 @@
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="card">
-                                <h6 class="card-header">10k</h6>
+                                <h6 class="card-header bg-primary text-white">10k</h6>
                                 <div class="card-body">
                                 <p class="card-text" id="ten-km"></p>
                                 </div>
@@ -73,7 +74,7 @@
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="card">
-                                <h6 class="card-header">Half Marathon</h6>
+                                <h6 class="card-header bg-primary text-white">Half Marathon</h6>
                                 <div class="card-body">
                                 <p class="card-text" id="half-marathon"></p>
                                 </div>
@@ -81,7 +82,7 @@
                         </div>
                         <div class="col-6 col-md-3">
                             <div class="card">
-                                <h6 class="card-header">Marathon</h6>
+                                <h6 class="card-header bg-primary text-white">Marathon</h6>
                                 <div class="card-body">
                                 <p class="card-text" id="marathon"></p>
                                 </div>
@@ -98,20 +99,21 @@
                             <div class="input-group time-inputs" id="km-inputs">
                                 <input id="km-distance" type="number" value="10" class="form-control" aria-label="Km Distance Input" onkeyup="convertDistance('km')">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="km-label">kms</span>
+                                    <span class="input-group-text bg-primary text-white" id="km-label">kms</span>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="col-12 col-sm-2 convert-btn time-inputs">
-                            <h3 class=".d-sm-none .d-md-block"><i class="bi bi-arrow-left-right"></i></h3>
+                        <div class="col-12 col-sm-2 time-inputs input-button">
+                            <h3 type="button" id="convert-btn" class="btn btn-outline-primary d-none d-sm-block disabled"><i class="bi bi-arrow-left-right"></i></h3>
+                            <h3 type="button" id="convert-btn" class="btn btn-outline-primary d-inline d-sm-none disabled"><i class="bi bi-arrow-down-up"></i></h3>   
                         </div>
 
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="mile-inputs">
                                 <input id="mile-distance" type="number" class="form-control" aria-label="Mile Distance Input" onkeyup="convertDistance('mile')">
                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="mile-label">miles</span>
+                                    <span class="input-group-text bg-primary text-white" id="mile-label">miles</span>
                                 </div>
                             </div>
                         </div>
