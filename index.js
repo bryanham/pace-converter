@@ -1,27 +1,29 @@
 function convertPace(unit) {
     const conversion = 1.60934;
-    const time = document.getElementById(unit + "-time").value;
-    const [mins, secs] = time.split(":")
-
-    const totalMinutes = parseInt(mins) + (parseInt(secs) / 60);
-    
+    let mins = document.getElementById(unit + "-mins").valueAsNumber;
+    let secs = document.getElementById(unit + "-secs").valueAsNumber;
+    mins = isNaN(mins) ? 0 : mins;
+    secs = isNaN(secs) ? 0 : secs;
+    const totalMinutes = mins + secs / 60;
     const pace = unit == 'km' ? totalMinutes * conversion : totalMinutes / conversion;
     const minutes = Math.floor(pace);
-    const seconds = Math.round((pace - minutes) * 60);
-    const timeString = minutes < 10 ? `0${minutes}:${seconds}` : `${minutes}:${seconds}` 
+    const seconds = Math.round((pace - minutes) * 60); 
 
     if(unit === 'km') {
-        document.getElementById('mile-time').value = timeString;
+        document.getElementById('mile-mins').value = minutes;
+        document.getElementById('mile-secs').value = seconds < 10 ? "0" + seconds : seconds;
     } else {
-        document.getElementById('km-time').value = timeString;
+        document.getElementById('km-mins').value = minutes;
+        document.getElementById('km-secs').value = seconds < 10 ? "0" + seconds : seconds;
     }
-    
     calculateRaceTimes();
 }
 
 function calculateRaceTimes() {
-    const time = document.getElementById("km-time").value;
-    let [mins, secs] = time.split(":"); 
+    let mins = document.getElementById("km-mins").valueAsNumber;
+    let secs = document.getElementById("km-secs").valueAsNumber;
+    mins = isNaN(mins) ? 0 : mins
+    secs = isNaN(secs) ? 0 : secs
     const totalMinutes = parseInt(mins) + (parseInt(secs) / 60);
     const fiveKm = totalMinutes * 5;
     const tenKm = totalMinutes * 10;
@@ -30,8 +32,8 @@ function calculateRaceTimes() {
 
     const fiveKmHours = Math.floor(fiveKm / 60)
     const fiveKmMinutes = Math.round(fiveKm % 60);
-    const fiveKmSeconds = Math.floor(fiveKmMinutes * 60);
-    document.getElementById("five-km").textContent =`${fiveKmHours}h ${fiveKmMinutes}m ${fiveKmSeconds}s`;
+    const fiveKmSeconds = Math.round(fiveKmMinutes * 60);
+    document.getElementById("five-km").textContent = `${fiveKmHours}h ${fiveKmMinutes}m ${fiveKmSeconds}s`;
 
     const tenKmHours = Math.floor(tenKm / 60);
     const tenKmMinutes = Math.round(tenKm % 60);
@@ -47,4 +49,16 @@ function calculateRaceTimes() {
     const fullMinutes = Math.round(marathon % 60);
     const fullSeconds = Math.round(fullMinutes * 60);
     document.getElementById("marathon").textContent = `${marathonHours}h ${fullMinutes}m ${fullSeconds}s`;
+}
+
+function convertDistance(unit) {
+    const conversion = 1.60934;
+    const distance = document.getElementById(unit + "-distance").valueAsNumber;
+    const convertedDistance = unit == 'km' ? distance / conversion : distance * conversion
+
+    if (unit == 'km') {
+        document.getElementById('mile-distance').value = convertedDistance.toFixed(2);
+    } else {
+        document.getElementById('km-distance').value = convertedDistance.toFixed(2);
+    }
 }
