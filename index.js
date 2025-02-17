@@ -58,8 +58,8 @@ function convertDistance(unit) {
     const convertedDistance = unit == 'km' ? distance / conversion : distance * conversion
 
     if (unit == 'km') {
-        document.getElementById('mile-distance').value = convertedDistance.toFixed(2);
+        document.getElementById('mile-distance').value = convertedDistance.toFixed(4);
     } else {
-        document.getElementById('km-distance').value = convertedDistance.toFixed(2);
+        document.getElementById('km-distance').value = convertedDistance.toFixed(4);
     }
 }

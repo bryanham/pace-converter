@@ -26,11 +26,11 @@
                     <div class="row">
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="km-inputs">
-                                <input id="km-mins" type="number" value="5" class="form-control" value="05:00" max="59" aria-label="Km Minute Input" onkeyup="convertPace('km')">
+                                <input id="km-mins" type="number" value="5" class="form-control" value="05:00" max="59" aria-label="Km Minute Input" onchange="convertPace('km')" onkeyup="convertPace('km')">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="km-label">:</span>
                                 </div>
-                                <input id="km-secs" type="number" value="00" class="form-control" value="05:00" aria-label="Km Seconds Input" onkeyup="convertPace('km')">
+                                <input id="km-secs" type="number" value="00" class="form-control" value="05:00" aria-label="Km Seconds Input" onchange="convertPace('km')" onkeyup="convertPace('km')">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-primary text-white" id="km-label">/km</span>
                                 </div>
@@ -44,11 +44,11 @@
 
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="mile-inputs">
-                                <input id="mile-mins" type="number" class="form-control" aria-label="Mile Input" onkeyup="convertPace('mile')">
+                                <input id="mile-mins" type="number" class="form-control" aria-label="Mile Input" onchange="convertPace('mile')" onkeyup="convertPace('mile')">
                                 <div class="input-group-append">
                                     <span class="input-group-text" id="mile-label">:</span>
                                 </div>
-                                <input id="mile-secs" type="number" class="form-control" aria-label="Mile Input" onkeyup="convertPace('mile')">
+                                <input id="mile-secs" type="number" class="form-control" aria-label="Mile Input" onchange="convertPace('mile')" onkeyup="convertPace('mile')">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-primary text-white" id="mile-label">/mile</span>
                                 </div>
@@ -100,7 +100,7 @@
                     <div class="row">
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="km-input">
-                                <input id="km-distance" type="number" value="10" class="form-control" aria-label="Km Distance Input" onkeyup="convertDistance('km')">
+                                <input id="km-distance" type="number" value="10" class="form-control" aria-label="Km Distance Input" onchange="convertDistance('km')" onkeyup="convertDistance('km')">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-primary text-white" id="km-label">kms</span>
                                 </div>
@@ -114,7 +114,7 @@
 
                         <div class="col-12 col-sm-5">
                             <div class="input-group time-inputs" id="mile-input">
-                                <input id="mile-distance" type="number" class="form-control" aria-label="Mile Distance Input" onkeyup="convertDistance('mile')">
+                                <input id="mile-distance" type="number" class="form-control" aria-label="Mile Distance Input" onchange="convertDistance('mile')" onkeyup="convertDistance('mile')">
                                 <div class="input-group-append">
                                     <span class="input-group-text bg-primary text-white" id="mile-label">miles</span>
                                 </div>
